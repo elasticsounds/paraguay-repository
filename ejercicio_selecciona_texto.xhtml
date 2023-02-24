@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en"
+    xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <link href="assets/css/book.css" rel="stylesheet" type="text/css" />
+    <!--<link href="assets/css/animate.css"	rel="stylesheet" type="text/css" />-->
+    <link href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/interact.min.js"></script>
+    <script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/imageMapResizer.min.js"></script>
+
+    <script type="text/javascript">
+        // variables para el cambio de funcion de audio
+        var slides_dictionary = [
+            {},
+            {
+                slide_name: "start",
+                back_animation: true,
+                forward_animation: true,
+                is_multiple_select: true,
+                options: ["tutorial_config", "skip_tutorial_config"]
+            },
+            {
+                slide_name: "clase-36-a1-1",
+                back_animation: true,
+                forward_animation: true,
+                slide_title: "♦ Clase 36: Creciendo sanos",
+                is_multiple_select: true,
+                options: ["clase-36-a1-1-b1", "clase-36-a1-1-b2", "clase-36-a1-1-b3", "clase-36-a1-1-b4"]
+            },
+        ];
+        // end dictionary
+    </script>
+    
+
+    <script type="text/javascript" src="assets/js/book_responsive.js"></script>
+
+    <title>Prototipo 2022 Unidad 1</title>
+    <dc:creator>Paraguay Educa</dc:creator>
+    <dc:title>Plan piloto de libro accesible</dc:title>
+    <dc:identifier></dc:identifier>
+    <dc:date>2022-09-10</dc:date>
+    <dc:publisher></dc:publisher>
+    <meta property="dtb:narrator">
+    </meta>
+    <meta property="dtb:producer">
+    </meta>
+    <meta charset="utf-8" />
+</head>
+
+
+<body epub:type="bodymatter" class="bg-w">
+    <nav class="d-flex justify-content-between navbar navbar-expand navbar-light main-navbar bg-w nav_box">
+        <div class="col-3 p-0 d-flex justify-content-start">
+            <span  class="marker_bg"> <span class="marker_title" id="slide-title"> title</span></span>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            <span>
+                <button id="btn_senhas" type="button" class="select-senhas btn btn-small" style="padding: 2px;" onclick="toggleSenhas()"><img class="h-100"
+                    src="assets/img/config-icon/leng_senhas_cuadrado.png" id="toggleSenhas" /></button>
+                <button id="btn_audio" type="button" class="btn btn-small" style="padding: 2px;"><img class="h-100"
+                        src="assets/img/config-icon/sonido_cuadrado.png" onclick="toggleMute()" /></button>
+                <button id="btn_guarani" type="button" class="guarani-audio btn btn-small" style="opacity: 0.3; padding: 2px;" onclick="toggleGuaraniAudio()"><img class="h-100"
+                    src="assets/img/config-icon/guarani_g.png"/></button>
+                <button id="btn_simple" type="button" class="select-simple btn btn-small" style="padding: 2px;" onclick="toggleSimple()"><img class="h-100"
+                    src="assets/img/config-icon/leng_simple_cuadrado.png"/></button>
+                <button id="btn_autoclick" type="button" class="select-autoclick btn btn-small" style="padding: 2px;" onclick="toggleAutoclick()"><img class="h-100"
+                    src="assets/img/config-icon/autoClic.png"/></button>
+            </span>
+        </div>
+        <div class="col-3">
+            <span></span>
+        </div>
+    </nav>
+
+    <nav class="d-flex justify-content-between navbar navbar-expand navbar-light bottom-navbar bg-w nav_box">
+        <div class="col-4 flex-center-all h-100">
+            
+            
+        </div>
+
+        <div class="col-4 flex-center-all h-100">
+            <button id="prev-slide" class="btn btn-small" style="padding: 2px;" onclick="goBack()">
+                <img src="assets/img/config-icon/flecha_back_larga.png" class="h-100" />
+            </button>
+            <button id="play-pause" class="btn btn-small" onclick="playPause()" style="padding: 2px;">
+                <img src="assets/img/config-icon/play_cuadrado.png" class="h-100 js-play" />
+                <img src="assets/img/config-icon/pausa_cuadrado.png" class="h-100 js-pause" style="display:none" />
+            </button>
+            <button id="next-slide" class="btn btn-small" style="padding: 2px;" onclick="goNext()">
+                <img src="assets/img/config-icon/flecha_next_larga.png" class="h-100" />
+            </button>
+        </div>
+
+        <div class="col-4 flex-center-all h-100 d-flex" style="justify-content: right;">
+            <span id="prueba_contador"></span>
+            <button id="repetir" type="button" class="repeat-button btn btn-small" style="padding: 2px;" onclick="repeatCurrentSlide()"><img class="h-100"
+                src="assets/img/config-icon/repetir_cuadrado.png"/></button>
+            <button id="go-home" class="btn btn-small" onclick="movementButton()" style="padding: 2px;">
+                <img src="assets/img/config-icon/home_cuadrado.png" class="h-100" />
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="container_box">
+        <div class="row container_body d-flex justify-content-center">
+            <div class="col-9" id="content-column">
+
+
+                <!-- Ver tutorial -->
+
+                <div class="slide_box" id="start">
+                    <div class="slide_container">
+                        <div class="slide_body">
+                            <div class="row justify-content-center m-0" >
+                                <h1 class="font-weight_color js-read-auto main_title"
+                                data-audio-file="assets/audio/config/deseas_conocer.m4a"
+                                data-video-file="assets/video/slide-1/video-4.mp4"
+                                >¿Deseas conocer este material?</h1>
+                            </div>
+                            <div class="row m-0">
+                                <div class="col-6 justify-content-center js-read-auto"
+                                    data-audio-file="assets/audio/config/1_ver_tutorial.m4a"
+                                    data-video-file="assets/video/slide-1/video-4.mp4" style="display:grid">
+                                    <button type="button" id="tutorial_config" class="btn select-audio not_opacity" onclick="startTutorial()"><img class=""
+                                        src="assets/img/config-icon/play_cuadrado.png" style="max-height: 16vh;"/></button>
+                                        <h3 class="font-weight_color text-center">1. Ver tutorial</h3>
+                                </div>
+                                <div class="col-6 justify-content-center js-read-auto"
+                                    data-audio-file="assets/audio/config/2_saltar_tutorial.m4a"
+                                    data-video-file="assets/video/slide-1/video-4.mp4" style="display:grid">
+                                    <button id="skip_tutorial_config" type="button" class="btn select-audio not_opacity" onclick="movementButton()"><img class=""
+                                        src="assets/img/config-icon/pasar_tutorial_azul.png" style="max-height: 16vh;"/></button>
+                                        <h3 class="font-weight_color text-center">2. Saltar tutorial</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="slide_box slide_responsive" id="clase-36-a1-1">
+                    <div class="container pt-3 pb-3 position-relative container_responsive">
+                        <div class="w-100 h-100 flex-center-all d-table">
+                            <div class="centered-container h-100 d-table-cell align-middle text-center">
+                                <div>
+                                    <div class="text-container title_responsive">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-center js-read-auto" 
+                                            data-audio-file="assets/audio/reutilizar/Actividad_2.m4a"
+                                            data-video-file="assets/video/clase3/ACTIVIDAD 2/2  Actividad 2.mp4">
+                                                <div>
+                                                    <h3 style="margin-bottom:0"><span class="main-title">Actividad 1</span></h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-center js-read-auto" 
+                                            data-audio-file="assets/audio/reutilizar/Selecciona las palabras que comienzan con la letra A.m4a"
+                                            data-video-file="assets/video/clase3/ACTIVIDAD 2/3 Selecciona las palabras que comienzan con la letra A.mp4" style="margin-top: 6px;">
+                                                <h4>Selecciona la opción correspondiente.</h4>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-center js-read-auto" 
+                                            data-audio-file="assets/audio/reutilizar/Selecciona las palabras que comienzan con la letra A.m4a"
+                                            data-video-file="assets/video/clase3/ACTIVIDAD 2/3 Selecciona las palabras que comienzan con la letra A.mp4" style="margin-top: 6px;">
+                                                <h4>Completa el texto.</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-center-all" style="margin-top: 10px;">
+                                            <div class="col-12 flex-center-all" id="clase-36-a1-1-text">
+                                                <h4 class="target_text" id="target" ></h4>
+                                            </div>
+                                        </div>
+                                        <div class="row m-0 d-flex justify-content-center">
+                                            <div class="col-6 target_hide" id="clase-36-a1-1-b1-container">
+                                                <div class="col_seleccion_multiple m-1" style="height: 30vh;">
+                                                    <button id="clase-36-a1-1-b1" class="btn_seleccion_multiple js-read-auto" onclick="insertText('clase-36-a1-1-b1', 'test1', 'target', 'clase-36-a1-1-b1-container')"
+                                                    data-audio-file="assets/audio/clase2/2- e.mp3" data-video-file="assets/video/clase2/ACTIVIDAD 1/4) VOCALES/2 E.mp4">
+                                                        <div class="d-flex justify-content-center">
+                                                            <img id="clase-8-a2-o1" class="float-left img_in_correcto multiple_answer" src="assets/img/reusables/correcto.png" />
+                                                        </div>
+                                                        <div class="d-flex justify-content-center"><img class="float-left img_seleccion_multiple w-100" src="assets/img/clase-36/frutas_verduras_carne.png" /></div>
+                                                        <div class="name_seleccion_multiple"><h3 class="barco_boton_text">1. frutas, verduras y carnes.</h3></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 target_hide" id="clase-36-a1-1-b2-container">
+                                                <div class="col_seleccion_multiple m-1" style="height: 30vh;">
+                                                    <button id="clase-36-a1-1-b2" class="btn_seleccion_multiple js-read-auto" onclick="insertText('clase-36-a1-1-b2', 'test2', 'target', 'clase-36-a1-1-b2-container')"
+                                                    data-audio-file="assets/audio/clase2/2- e.mp3" data-video-file="assets/video/clase2/ACTIVIDAD 1/4) VOCALES/2 E.mp4">
+                                                        <div class="d-flex justify-content-center">
+                                                            <img id="clase-8-a2-o1" class="float-left img_in_correcto multiple_answer" src="assets/img/reusables/correcto.png" />
+                                                        </div>
+                                                        <div class="d-flex justify-content-center"><img class="float-left img_seleccion_multiple w-100" src="assets/img/clase-36/golosinas.png"/></div>
+                                                        <div class="name_seleccion_multiple"><h3 class="barco_boton_text">2. golosinas, chupetines, panchos, embutidos.</h3></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-3 slide_box" id="video-column"
+                style="display:none; display: flex; justify-content: center;">
+                <div class="video-display">
+                    <video class="w-100 h-auto" id="video-ls" style="padding: 0 15px 0 15px;">
+                        <source src="assets/video/slide-1/video-1.mp4" type="video/mp4" />
+                        <!--<source src="movie.ogg" type="video/ogg" />-->
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="zoom-video-container" style="position: fixed; bottom: 15%">
+                    <button class="btn btn-small"  id=""
+                    onclick="videoZoom()" >
+                        <img src="assets/img/config-icon/lupa.png" style="height: 60px; margin-right: 5px;" />
+                    </button>
+                    <button class="btn btn-small"  id=""
+                    onclick="videoZoomOut()" >
+                        <img src="assets/img/config-icon/lupa_menos.png" style="height: 60px; margin-right: 5px;" />
+                    </button>
+                </div>
+            </div>
+
+            <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content" style="border: 2px solid var(--primary);">
+                        <div class="modal-header" style="border-bottom: 2px solid var(--primary);">
+                            <h5 class="modal-title" id="title" style="font-weight: bold; color: var(--primary);">
+
+                            </h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row d-flex justify-content-center">
+                                <img id="div_image" style="max-width: 60%; max-height: 200px;" class="float-left" />
+                                <h3 id="word">
+
+                                </h3>
+                            </div>
+
+                            <div class="row d-flex justify-content-center">
+                                <p id="div_description" style="padding: 25px; text-align: justify; font-size: 22px;"></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="border-top: none">
+                            <button type="button" class="btn btn-secondary btn_exit" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
